@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Full Materi</string>
+    <string name="api_key">AIzaSyAm0vHLyCwx2EZGUefylBLMUfClZ-VUSrU</string>
+    <string-array name="pelanggan">
+        <item>Baru</item>
+        <item>Lama</item>
+    </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>

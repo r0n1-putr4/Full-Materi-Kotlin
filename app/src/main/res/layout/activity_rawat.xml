@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".uts.RawatActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Rawat Inap"
+            android:layout_gravity="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Register"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etNoPesan"
+            android:hint="ex: AX03"
+            android:textSize="20sp"
+            android:inputType="number"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Lengkap"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etNama"
+            android:hint="ex: Roni Putra"
+            android:textSize="20sp"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIK"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etNama2"
+            android:hint="ex: 199007222009121004"
+            android:textSize="20sp"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HP"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etNama4"
+            android:hint="ex: )8234546565"
+            android:textSize="20sp"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tanggal Masuk"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_calender"
+            android:padding="10dp"
+            android:background="@color/silver"
+            android:drawableTint="@color/hijau"
+            android:id="@+id/tvTgl"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jam Masuk"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_time"
+            android:padding="10dp"
+            android:background="@color/silver"
+            android:drawableTint="@color/hijau"
+            android:id="@+id/tvJam"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kelas Kamar"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spKategori"
+            tools:listitem="@layout/spin_style"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kategori Pasien"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rgStatus"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BPJS"
+                android:textSize="20sp"
+                android:id="@+id/rbBaru" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Non BPJS"
+                android:textSize="20sp"
+                android:id="@+id/rbLama"
+                android:layout_marginLeft="20dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mandiri"
+                android:textSize="20sp"
+                android:id="@+id/rbLama4"
+                android:layout_marginLeft="20dp"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Hari"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etLama"
+            android:hint="ex: 1"
+            android:textSize="20sp"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biaya Tambah"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:id="@+id/tvPendidikan"
+            android:layout_gravity="center"
+            />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+            <TableRow>
+                <CheckBox
+                    android:text="Bed Sofa: Rp. 75.000/Hari"
+                    android:id="@+id/chkNasGor"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etNasgor"
+                    android:hint="Hari : 1"
+                    android:textSize="20sp"
+                    android:inputType="number"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <CheckBox
+                    android:text="Sofa: Rp.60.000/Hari"
+                    android:id="@+id/chkMie"
+                    android:layout_column="0"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etJlhMie"
+                    android:hint="Hari: 1"
+                    android:textSize="20sp"
+                    android:inputType="number"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <CheckBox
+                    android:text="Dispenser: Rp. 25.000/Hari"
+                    android:id="@+id/chkAyam"
+                    android:layout_column="0"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etJlhAyam"
+                    android:hint="ex: 1"
+                    android:textSize="20sp"
+                    android:inputType="number"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+                <CheckBox
+                    android:text="Makanan(Nasi, Sambal): Rp. 45.000/Hari"
+                    android:id="@+id/chkAyam2"
+                    android:layout_column="0"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etJlhAyam2"
+                    android:hint="ex: 1"
+                    android:textSize="20sp"
+                    android:inputType="number"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIMPAN"
+            android:id="@+id/btnBayar"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+</ScrollView>
