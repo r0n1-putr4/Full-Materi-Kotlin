@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/ic_log_out"
+        android:title="Home"
+        app:showAsAction="always"
+        android:iconTint="@color/white"
+        />
+
+    <item
+        android:id="@+id/bottom_user"
+        android:icon="@drawable/ic_checked"
+        android:title="Akun"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/bottom_shop"
+        android:icon="@drawable/ic_date"
+        app:showAsAction="never"
+        android:title="Belanja"
+        />
+
+
+
+
+</menu>
