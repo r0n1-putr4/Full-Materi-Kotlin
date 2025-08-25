@@ -21,4 +21,7 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
     <color name="merah">#F44336</color>
+    <color name="silver">#F44336</color>
+    <color name="hijau">#F44336</color>
+    <color name="platinum">#F44336</color>
 </resources>

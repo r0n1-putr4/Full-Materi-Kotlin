@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="10dp"
-    tools:context=".ui.LinearActivity">
+    tools:context=".layout.LinearActivity">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn1"
+        android:text="@string/linear_btn1"
         android:id="@+id/btn1"
         android:textColor="@color/red"
         />
@@ -19,7 +19,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn2"
+        android:text="@string/linear_btn2"
         android:id="@+id/btn2"
         android:layout_gravity="center"
         />
@@ -27,7 +27,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn3"
+        android:text="@string/linear_btn3"
         android:id="@+id/btn3"
         android:layout_gravity="right"
         />
@@ -35,7 +35,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn4"
+        android:text="@string/linear_btn3"
         android:id="@+id/btn4"
         />
 

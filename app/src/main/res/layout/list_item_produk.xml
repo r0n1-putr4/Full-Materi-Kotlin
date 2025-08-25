@@ -26,7 +26,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/food7"
+                    android:src="@drawable/food"
                     android:id="@+id/imgItem"
                     android:scaleType="fitXY"/>
 
@@ -55,7 +55,6 @@
                     android:id="@+id/namaItem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_medium"
                     android:text="Jahe"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
@@ -64,7 +63,6 @@
                     android:id="@+id/txtKategori"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
                     android:text="Rempah"
                     android:textColor="@color/colorGray2"
                     android:textSize="10sp" />
@@ -74,7 +72,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:fontFamily="@font/roboto_medium"
                     android:text="Rp. 5.000"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
@@ -105,7 +102,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/img"
-                        android:fontFamily="@font/roboto"
                         android:text="Mutia Store"
                         android:textColor="@color/green"
                         android:textSize="10sp"
