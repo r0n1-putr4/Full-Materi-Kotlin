@@ -18,6 +18,9 @@
         android:theme="@style/Theme.FullMateri"
         tools:targetApi="31">
         <activity
+            android:name=".layout.CobaActivity"
+            android:exported="false" />
+        <activity
             android:name=".layout.TestActivity"
             android:exported="false" />
         <activity
