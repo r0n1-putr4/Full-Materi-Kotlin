@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "roni.putra.fullmateri"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "roni.putra.fullmateri"
         minSdk = 23
-        targetSdk = 33
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 

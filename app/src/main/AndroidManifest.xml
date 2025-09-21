@@ -69,7 +69,7 @@
             android:name=".layout.ConstrainActivity"
             android:exported="false" />
         <activity
-            android:name=".widget.TextEditButtonActivity"
+            android:name=".menu.MenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
