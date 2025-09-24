@@ -2,74 +2,82 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/silver">
+    android:background="@color/silver"
+    >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp">
+            >
 
             <ImageView
-                android:id="@+id/imgProduk"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
+                android:src="@drawable/makanan_satu"
                 android:scaleType="centerCrop"
-                android:src="@drawable/makanan_satu" />
+                android:id="@+id/imgProduk"
+                />
 
             <TextView
-                android:id="@+id/tvNamaProduk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/imgProduk"
-                android:gravity="center|top"
                 android:text="Nama Produk"
+                android:layout_toRightOf="@id/imgProduk"
+                android:layout_marginLeft="10dp"
+                android:gravity="center|top"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/tvNamaProduk"
+                />
 
             <TextView
-                android:id="@+id/tvToko"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Toko"
+                android:layout_toRightOf="@id/imgProduk"
                 android:layout_below="@id/tvNamaProduk"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="8dp"
-                android:layout_toRightOf="@id/imgProduk"
-                android:text="Toko"
                 android:textSize="18sp"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                android:layout_marginTop="8dp"
+                android:id="@+id/tvToko"
+                />
 
             <TextView
-                android:id="@+id/tvHarga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Harga"
+                android:layout_toRightOf="@id/imgProduk"
                 android:layout_below="@id/tvToko"
                 android:layout_marginLeft="10dp"
+                android:textSize="23sp"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@id/imgProduk"
-                android:text="Harga"
                 android:textColor="@color/merah"
-                android:textSize="23sp" />
+                android:id="@+id/tvHarga"
+                />
 
             <TextView
-                android:id="@+id/tvRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvHarga"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
+                android:text="Rating"
                 android:layout_toRightOf="@id/imgProduk"
+                android:layout_below="@id/tvHarga"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
                 android:drawableLeft="@drawable/ic_star"
-                android:drawableTint="@color/black"
                 android:gravity="center"
-                android:text="Rating" />
+                android:drawableTint="@color/black"
+                android:id="@+id/tvRating"
+                />
 
         </RelativeLayout>
 

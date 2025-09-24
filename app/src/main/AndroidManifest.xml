@@ -18,6 +18,12 @@
         android:theme="@style/Theme.FullMateri"
         tools:targetApi="31">
         <activity
+            android:name=".rec.RecGridLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".rec.RecyclerLinearVerticalActivity"
+            android:exported="false" />
+        <activity
             android:name=".list.ArrayAdapter.ListViewArrayAdapterActivity"
             android:exported="false" />
         <activity

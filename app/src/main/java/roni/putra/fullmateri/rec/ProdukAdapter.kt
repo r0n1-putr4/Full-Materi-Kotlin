@@ -9,40 +9,32 @@ import androidx.recyclerview.widget.RecyclerView
 import roni.putra.fullmateri.R
 
 class ProdukAdapter(
-    private val listItemProduk: List<ProdukModel>,
-    private val type: Int
-    ): RecyclerView.Adapter<ProdukAdapter.ViewProduk>() {
-
-    private val typelinear = 1
+    private val listItemProduk: List<ProdukModel>
+) : RecyclerView.Adapter<ProdukAdapter.ViewProduk>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : ViewProduk {
-        return if (type == typelinear){
-            val view= LayoutInflater.from(parent.context).inflate(R.layout.list_item_produk_dua, parent,false )
-            ViewProduk(view)
-        }else{
-            val view= LayoutInflater.from(parent.context).inflate(R.layout.list_item_produk, parent,false )
-            ViewProduk(view)
-        }
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewProduk {
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.list_item_produk, parent, false)
+        return ViewProduk(view)
     }
 
     override fun onBindViewHolder(holder: ViewProduk, position: Int) {
-        val produk = listItemProduk[position]
-        holder.namaItem.text = produk.namaItem
-        holder.txtKategori.text = produk.namaKategori
-        holder.imgItem.setImageResource(produk.gambar)
-        if (produk.gambar == 1){
-            holder.namaItem.visibility = View.GONE
-        }
-
+        val data = listItemProduk[position]
+        holder.imgProduk.setImageResource(data.gambar)
+        holder.tvNamaProduk.text = data.namaProduk
+        holder.tvToko.text = data.toko
+        holder.tvHarga.text = data.harga
+        holder.tvRating.text = data.rating
     }
 
     override fun getItemCount() = listItemProduk.size
 
-    class ViewProduk(view: View): RecyclerView.ViewHolder(view){
-        val namaItem: TextView = view.findViewById<TextView>(R.id.namaItem)
-        val txtKategori: TextView = view.findViewById<TextView>(R.id.txtKategori)
-        val imgItem: ImageView = view.findViewById<ImageView>(R.id.imgItem)
+    class ViewProduk(view: View) : RecyclerView.ViewHolder(view) {
+        val imgProduk = view.findViewById<ImageView>(R.id.imgProduk)
+        val tvNamaProduk = view.findViewById<TextView>(R.id.tvNamaProduk)
+        val tvToko = view.findViewById<TextView>(R.id.tvToko)
+        val tvHarga = view.findViewById<TextView>(R.id.tvHarga)
+        val tvRating = view.findViewById<TextView>(R.id.tvRating)
     }
 }
