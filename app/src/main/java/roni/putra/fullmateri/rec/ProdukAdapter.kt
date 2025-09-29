@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import roni.putra.fullmateri.R
 
 class ProdukAdapter(
-    private val listItemProduk: List<ProdukModel>
+    private val listItemProduk: List<ProdukModel>,
+    val listener: OnAdapterListener
 ) : RecyclerView.Adapter<ProdukAdapter.ViewProduk>() {
 
 
@@ -26,6 +27,11 @@ class ProdukAdapter(
         holder.tvToko.text = data.toko
         holder.tvHarga.text = data.harga
         holder.tvRating.text = data.rating
+
+        holder.itemView.setOnClickListener {
+            listener.onClick(data)
+        }
+
     }
 
     override fun getItemCount() = listItemProduk.size
@@ -36,5 +42,9 @@ class ProdukAdapter(
         val tvToko = view.findViewById<TextView>(R.id.tvToko)
         val tvHarga = view.findViewById<TextView>(R.id.tvHarga)
         val tvRating = view.findViewById<TextView>(R.id.tvRating)
+    }
+
+    interface OnAdapterListener {
+        fun onClick(results: ProdukModel)
     }
 }

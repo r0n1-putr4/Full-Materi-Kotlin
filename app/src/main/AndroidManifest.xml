@@ -18,11 +18,12 @@
         android:theme="@style/Theme.FullMateri"
         tools:targetApi="31">
         <activity
-            android:name=".rec.RecGridLayoutActivity"
+            android:name=".rec.DetailProdukActivity"
             android:exported="false" />
         <activity
-            android:name=".rec.RecyclerLinearVerticalActivity"
+            android:name=".rec.RecGridLayoutActivity"
             android:exported="false" />
+
         <activity
             android:name=".list.ArrayAdapter.ListViewArrayAdapterActivity"
             android:exported="false" />
@@ -55,6 +56,9 @@
             android:exported="false" />
         <activity
             android:name=".intent.HasilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".widget.LatWidgetActivity"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.

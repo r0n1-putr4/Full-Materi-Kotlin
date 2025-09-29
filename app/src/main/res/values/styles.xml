@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToolbarPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+        <!-- warna teks menu di popup -->
+        <item name="android:textColor">@android:color/white</item>
+        <!-- warna background popup menu -->
+        <item name="android:colorBackground">@color/black</item>
+    </style>
+</resources>

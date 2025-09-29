@@ -1,6 +1,7 @@
 package roni.putra.fullmateri.menu
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import roni.putra.fullmateri.R
+import roni.putra.fullmateri.widget.LatWidgetActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +54,12 @@ class MenuActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "click logout", Toast.LENGTH_LONG).show()
                 true
             }
+            R.id.top_vivo -> {
+                startActivity(Intent(this@MenuActivity, LatWidgetActivity::class.java))
+                Toast.makeText(applicationContext, "click vivo", Toast.LENGTH_LONG).show()
+                true
+            }
+
 
             else -> super.onOptionsItemSelected(item)
         }

@@ -9,4 +9,5 @@
         <item>Lama</item>
     </string-array>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="tes">Tes</string>
 </resources>

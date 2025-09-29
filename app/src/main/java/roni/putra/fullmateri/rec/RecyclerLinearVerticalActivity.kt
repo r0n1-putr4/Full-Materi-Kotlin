@@ -1,5 +1,6 @@
 package roni.putra.fullmateri.rec
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.RecyclerView
 import roni.putra.fullmateri.R
+import roni.putra.fullmateri.intent.HasilActivity
 
 class RecyclerLinearVerticalActivity : AppCompatActivity() {
     private lateinit var rvProduk: RecyclerView
@@ -34,11 +36,18 @@ class RecyclerLinearVerticalActivity : AppCompatActivity() {
             ProdukModel(R.drawable.makanan_tiga, "Nama Produk 3", "Toko 1", "Rp. 17.000", "4.4"),
             ProdukModel(R.drawable.makanan_empat, "Nama Produk 4", "Toko 3", "Rp. 18.000", "3.7"),
             ProdukModel(R.drawable.makanan_lima, "Nama Produk 5", "Toko 4", "Rp. 20.000", "4.7"),
-
             )
 
         //Panggil adapter
-        val produkAdapter = ProdukAdapter(produk)
+        val produkAdapter = ProdukAdapter(produk,object : ProdukAdapter.OnAdapterListener{
+            override fun onClick(results: ProdukModel) {
+                val bundle = Bundle()
+                bundle.putInt("gambar", results.gambar)
+                val intent = Intent(this@RecyclerLinearVerticalActivity, DetailProdukActivity::class.java)
+                intent.putExtras(bundle)
+                startActivity(intent)
+            }
+        })
         rvProduk.adapter = produkAdapter
     }
 }
