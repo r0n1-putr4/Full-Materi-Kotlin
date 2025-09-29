@@ -3,6 +3,7 @@ package roni.putra.fullmateri.list.ArrayAdapter
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -32,12 +33,15 @@ class ListViewArrayAdapterActivity : AppCompatActivity() {
     private fun setPemograman(){
         val listPemograman = arrayOf("Kotlin","Java","PHP",
             "Dart","C","C++","C#","Delphi")
-
-        val arrayAdapterPemograman: ArrayAdapter<*>
-        arrayAdapterPemograman = ArrayAdapter(this,
+        val arrayAdapterPemograman = ArrayAdapter(this,
             R.layout.list_style,
             listPemograman)
         //panggil adapter lvPemograman
         lvPemograman.adapter = arrayAdapterPemograman
+
+        lvPemograman.setOnItemClickListener { parent, view, position, id ->
+            val selectedItem = listPemograman[position]
+            Toast.makeText(this, "Kamu pilih: $selectedItem", Toast.LENGTH_SHORT).show()
+        }
     }
 }
