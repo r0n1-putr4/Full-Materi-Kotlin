@@ -18,6 +18,7 @@ class LatWidgetActivity : AppCompatActivity() {
 
     private lateinit var etJlhMangga: TextView
     private lateinit var chkMangga: CheckBox
+    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

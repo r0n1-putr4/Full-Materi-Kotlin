@@ -73,7 +73,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="" />
+            android:value="AIzaSyBE7Et97YfUS_yLF4pJBGaUttuWArYpY8s" />
 
         <activity
             android:name=".widget.LatWidgetDuaActivity"
@@ -82,7 +82,7 @@
             android:name=".layout.ConstrainActivity"
             android:exported="false" />
         <activity
-            android:name=".menu.MenuActivity"
+            android:name=".map.MapsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
