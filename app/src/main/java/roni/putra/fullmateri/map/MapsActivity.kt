@@ -1,11 +1,15 @@
 package roni.putra.fullmateri.map
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Resources
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
@@ -16,7 +20,9 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MapStyleOptions
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import roni.putra.fullmateri.R
 import roni.putra.fullmateri.databinding.ActivityMapsBinding
 
@@ -24,12 +30,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
+    private lateinit var fabZoomIn: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        fabZoomIn = findViewById(R.id.fabZoomIn)
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -60,13 +69,28 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             mMap.addMarker(MarkerOptions()
                 .position(LatLng(it.Lat,it.Lng))
                 .title(it.Title).snippet(it.Snippet)
-                .icon(BitmapDescriptorFactory.fromResource(it.icon)))
+//                .icon(BitmapDescriptorFactory.fromResource(it.icon)))
+            )
+
+            mMap.setOnMarkerClickListener { marker ->
+                showMarkerDialog(marker)
+                true  // supaya map tidak auto zoom
+            }
         }
 
         //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(padang,zo0mMap))
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(padang,zo0mMap))
         enableLocation()
         setMapStyles(mMap)
+
+        satellite()
+    }
+
+
+    private fun satellite(){
+        fabZoomIn.setOnClickListener {
+            mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
+        }
     }
 
     private fun  enableLocation(){
@@ -92,4 +116,27 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             Log.e("", "Styles maps baru tidak bisa ditemukan")
         }
     }
+
+    private fun showMarkerDialog(marker: Marker) {
+        val dialog = AlertDialog.Builder(this)
+            .setTitle(marker.title)
+            .setMessage(marker.snippet)
+            .setPositiveButton("Detail") { _, _ ->
+                Toast.makeText(this, "Detail ${marker.title}", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("Navigation") { _, _ ->
+                val gmmIntent = Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("google.navigation:q=${marker.position.latitude},${marker.position.longitude}")
+                )
+                gmmIntent.setPackage("com.google.android.apps.maps")
+                startActivity(gmmIntent)
+            }
+            .setNeutralButton("Close", null)
+            .create()
+
+        dialog.show()
+    }
+
+
 }
