@@ -20,9 +20,7 @@
         <activity
             android:name=".rec.DetailProdukActivity"
             android:exported="false" />
-        <activity
-            android:name=".rec.RecGridLayoutActivity"
-            android:exported="false" />
+
 
         <activity
             android:name=".list.ArrayAdapter.ListViewArrayAdapterActivity"
@@ -82,7 +80,7 @@
             android:name=".layout.ConstrainActivity"
             android:exported="false" />
         <activity
-            android:name=".map.MapsActivity"
+            android:name=".rec.RecGridLayoutActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
