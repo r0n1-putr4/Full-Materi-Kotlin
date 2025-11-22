@@ -48,9 +48,9 @@ dependencies {
     implementation("com.google.android.gms:play-services-maps:19.2.0")
     implementation("androidx.activity:activity:1.10.1")
     
-    val room_version = "2.4.3" // Atau versi terbaru yang Anda gunakan
+    val roomVersion = "2.4.3" // Atau versi terbaru yang Anda gunakan
 
-    implementation ("androidx.room:room-runtime:$room_version")
+    implementation ("androidx.room:room-runtime:$roomVersion")
 
     implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
 
