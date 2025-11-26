@@ -22,7 +22,6 @@ class NoteActivity : AppCompatActivity() {
     private lateinit var noteAdapter: NoteAdapter
     private lateinit var notes: MutableList<Note>
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -74,6 +73,5 @@ class NoteActivity : AppCompatActivity() {
         })
         rvNote.adapter = noteAdapter
         Log.d("Notes ", notes.toString())
-
     }
 }
