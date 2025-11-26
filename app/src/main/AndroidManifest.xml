@@ -17,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FullMateri"
         tools:targetApi="31">
-
+        <activity
+            android:name=".sqlite.UpdateNoteActivity"
+            android:exported="false" />
         <activity
             android:name=".rec.DetailProdukActivity"
             android:exported="false" />

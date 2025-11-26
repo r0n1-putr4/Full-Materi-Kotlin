@@ -44,11 +44,11 @@ class NoteDao(context: Context) {
         return result > 0
     }
 
-    fun updateNote(id: Int, title: String, content: String): Boolean {
+    fun updateNote(id: Int,note: Note): Boolean {
         val db = dbHelper.readableDatabase
         val values = ContentValues()
-        values.put("judul", title)
-        values.put("isi", content)
+        values.put("judul", note.judul)
+        values.put("isi", note.isi)
         val result = db.update("notes", values, "id=?", arrayOf(id.toString()))
         return result > 0
     }

@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import roni.putra.fullmateri.R
+import roni.putra.fullmateri.rec.DetailProdukActivity
 import roni.putra.fullmateri.sqlite.adapter.NoteAdapter
 import roni.putra.fullmateri.sqlite.config.NoteDao
 import roni.putra.fullmateri.sqlite.model.Note
@@ -49,7 +50,14 @@ class NoteActivity : AppCompatActivity() {
         notes = db.getAllNotes().toMutableList()
         noteAdapter = NoteAdapter(notes, object : NoteAdapter.OnAdapterListener {
             override fun onClick(data: Note) {
+                val bundle = Bundle()
+                bundle.putInt("id", data.id)
+                bundle.putString("judul", data.judul)
+                bundle.putString("isi", data.isi)
 
+                val intent = Intent(this@NoteActivity, UpdateNoteActivity::class.java)
+                intent.putExtras(bundle)
+                startActivity(intent)
 
             }
 
