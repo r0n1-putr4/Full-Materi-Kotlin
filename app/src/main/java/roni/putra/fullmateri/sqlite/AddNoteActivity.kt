@@ -1,7 +1,7 @@
 package roni.putra.fullmateri.sqlite
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -27,7 +27,6 @@ class AddNoteActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         etTitle = findViewById(R.id.etTitle)
         etNote = findViewById(R.id.etNote)
         btnSimpan = findViewById(R.id.btnSimpan)
@@ -41,21 +40,16 @@ class AddNoteActivity : AppCompatActivity() {
     private fun simpanData() {
         btnSimpan.setOnClickListener {
             val repo = NoteDao(this)
-
             val note = Note(
                 judul = etTitle.text.toString(),
                 isi = etNote.text.toString()
             )
-
             val success = repo.insertNote(note)
-
             if (success) {
-                Toast.makeText(this, "Berhasil disimpan", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, NoteActivity::class.java))
             } else {
                 Toast.makeText(this, "Gagal menyimpan", Toast.LENGTH_SHORT).show()
             }
         }
     }
-
-
 }

@@ -76,6 +76,9 @@
             android:name=".layout.ConstrainActivity"
             android:exported="false" />
         <activity
+            android:name=".sqlite.AddNoteActivity"
+            android:exported="false" />
+        <activity
             android:name=".sqlite.NoteActivity"
             android:exported="true">
             <intent-filter>

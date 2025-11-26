@@ -6,10 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import roni.putra.fullmateri.R
+import roni.putra.fullmateri.rec.ProdukAdapter.OnAdapterListener
 import roni.putra.fullmateri.sqlite.model.Note
 
 class NoteAdapter(
-    private val listNote: List<Note>
+    private val listNote: List<Note>,
+    val listener: OnAdapterListener
 ) : RecyclerView.Adapter<NoteAdapter.ViewProduk>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -25,15 +27,31 @@ class NoteAdapter(
         position: Int
     ) {
         val data = listNote[position]
-        holder.txtTitle.text = data.judul
-        holder.txtBody.text = data.isi
+        holder.tvTitle.text = data.judul
+        holder.tvBody.text = data.isi
+
+        holder.itemView.setOnClickListener {
+            listener.onClick(data)
+        }
+
+        // Event Long Klik
+        holder.itemView.setOnLongClickListener {
+            listener.onLongClick(data,position)
+            true // penting agar long click tidak pemicu click juga
+        }
     }
 
     override fun getItemCount(): Int = listNote.size
 
     class ViewProduk(view: View) : RecyclerView.ViewHolder(view) {
-        val txtTitle = view.findViewById<TextView>(R.id.txtTitle)
-        val txtBody = view.findViewById<TextView>(R.id.txtBody)
+        val tvTitle = view.findViewById<TextView>(R.id.tvTitle)
+        val tvBody = view.findViewById<TextView>(R.id.tvBody)
 
     }
+
+    interface OnAdapterListener {
+        fun onClick(data: Note)
+        fun onLongClick(data: Note,position: Int)
+    }
+
 }

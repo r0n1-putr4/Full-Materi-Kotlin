@@ -38,5 +38,19 @@ class NoteDao(context: Context) {
         }
     }
 
+    fun deleteNote(id: Int): Boolean {
+        val db = dbHelper.readableDatabase
+        val result = db.delete("notes", "id=?", arrayOf(id.toString()))
+        return result > 0
+    }
+
+    fun updateNote(id: Int, title: String, content: String): Boolean {
+        val db = dbHelper.readableDatabase
+        val values = ContentValues()
+        values.put("judul", title)
+        values.put("isi", content)
+        val result = db.update("notes", values, "id=?", arrayOf(id.toString()))
+        return result > 0
+    }
 
 }
