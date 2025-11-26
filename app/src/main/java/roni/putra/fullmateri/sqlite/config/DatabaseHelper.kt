@@ -1,4 +1,4 @@
-package roni.putra.fullmateri.sqlite
+package roni.putra.fullmateri.sqlite.config
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -9,8 +9,8 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context,"notes.db",null
         db?.execSQL(
             "CREATE TABLE notes (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "title TEXT," +
-                    "content TEXT)"
+                    "judul TEXT," +
+                    "isi TEXT)"
         )
     }
 

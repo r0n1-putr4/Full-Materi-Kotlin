@@ -4,22 +4,19 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import roni.putra.fullmateri.R
-import roni.putra.fullmateri.sqlite.Note
-import roni.putra.fullmateri.sqlite.room.NoteDB
+import roni.putra.fullmateri.sqlite.config.NoteDao
+import roni.putra.fullmateri.sqlite.model.Note
 
 class AddNoteActivity : AppCompatActivity() {
     private lateinit var btnSimpan: Button
     private lateinit var etTitle: EditText
     private lateinit var etNote: EditText
-    val db by lazy { NoteDB(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,14 +40,22 @@ class AddNoteActivity : AppCompatActivity() {
 
     private fun simpanData() {
         btnSimpan.setOnClickListener {
-            CoroutineScope(Dispatchers.IO).launch {
-                val note = Note(
-                    title = "Judul Baru", body = "Isi catatan contoh"
-                )
-                NoteDB(this@AddNoteActivity).noteDao().insert(note)
+            val repo = NoteDao(this)
+
+            val note = Note(
+                judul = etTitle.text.toString(),
+                isi = etNote.text.toString()
+            )
+
+            val success = repo.insertNote(note)
+
+            if (success) {
+                Toast.makeText(this, "Berhasil disimpan", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Gagal menyimpan", Toast.LENGTH_SHORT).show()
             }
-
-
         }
     }
+
+
 }
