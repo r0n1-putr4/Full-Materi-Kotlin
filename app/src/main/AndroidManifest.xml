@@ -17,11 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FullMateri"
         tools:targetApi="31">
+
         <activity
             android:name=".rec.DetailProdukActivity"
             android:exported="false" />
-
-
         <activity
             android:name=".list.ArrayAdapter.ListViewArrayAdapterActivity"
             android:exported="false" />
@@ -30,9 +29,6 @@
             android:exported="false" />
         <activity
             android:name=".layout.TestActivity"
-            android:exported="false" />
-        <activity
-            android:name=".sqlite.NoteActivity"
             android:exported="false" />
         <activity
             android:name=".dialog.NotificationActivity"
@@ -80,7 +76,7 @@
             android:name=".layout.ConstrainActivity"
             android:exported="false" />
         <activity
-            android:name=".rec.RecGridLayoutActivity"
+            android:name=".sqlite.AddNoteActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
