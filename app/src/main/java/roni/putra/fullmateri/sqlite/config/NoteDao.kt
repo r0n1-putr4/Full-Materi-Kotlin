@@ -18,24 +18,23 @@ class NoteDao(context: Context) {
         return result != -1L
     }
 
-    fun getAllNotes(): List<Note> {
-        val db = dbHelper.readableDatabase
-        val cursor = db.rawQuery("SELECT * FROM notes", null)
-
-        return mutableListOf<Note>().apply {
-            if (cursor.moveToFirst()) {
-                do {
-                    add(
-                        Note(
-                            cursor.getInt(0),
-                            cursor.getString(1),
-                            cursor.getString(2)
-                        )
+    fun getAllNote(): ArrayList<Note> {
+        val notes = ArrayList<Note>()
+        val db = dbHelper.writableDatabase
+        val cursor = db.rawQuery("SELECT * FROM note", null)
+        if (cursor.moveToFirst()) {
+            do {
+                notes.add(
+                    Note(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2)
                     )
-                } while (cursor.moveToNext())
-            }
-            cursor.close()
+                )
+            } while (cursor.moveToNext())
         }
+        cursor.close()
+        return notes
     }
 
     fun deleteNote(id: Int): Boolean {

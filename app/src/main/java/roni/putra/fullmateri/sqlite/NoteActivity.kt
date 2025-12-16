@@ -20,7 +20,7 @@ class NoteActivity : AppCompatActivity() {
     private lateinit var fabAdd: FloatingActionButton
     private lateinit var rvNote: RecyclerView
     private lateinit var noteAdapter: NoteAdapter
-    private lateinit var notes: MutableList<Note>
+    private lateinit var notes: ArrayList<Note>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +46,7 @@ class NoteActivity : AppCompatActivity() {
     private fun getData() {
 
         val db = NoteDao(this)
-        notes = db.getAllNotes().toMutableList()
+        notes = db.getAllNote()
         noteAdapter = NoteAdapter(notes, object : NoteAdapter.OnAdapterListener {
             override fun onClick(data: Note) {
                 val bundle = Bundle()
@@ -65,6 +65,8 @@ class NoteActivity : AppCompatActivity() {
                 if (success) {
                     notes.removeAt(position)
                     noteAdapter.notifyItemRemoved(position)
+                    noteAdapter.notifyItemRangeChanged(position,
+                        notes.size - position)
                     Toast.makeText(this@NoteActivity, "Berhasil dihapus", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this@NoteActivity, "Gagal dihapus", Toast.LENGTH_SHORT).show()
